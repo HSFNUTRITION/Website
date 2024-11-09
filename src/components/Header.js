@@ -1,9 +1,17 @@
 import React from 'react';
-import { FaSearch, FaShoppingCart,FaUserCircle } from 'react-icons/fa';
+import { FaShoppingCart,FaUserCircle } from 'react-icons/fa';
 import './Header.css';
 import Subheader from './Subheader';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
+
   return (
     <div>
       <Subheader />
@@ -27,9 +35,6 @@ const Header = () => {
         {/* Search Bar */}
         <div className="header-search">
           <input type="text" placeholder="Search products..." />
-          <button>
-            <FaSearch />
-          </button>
         </div>
 
         {/* Cart Icon */}
@@ -38,7 +43,7 @@ const Header = () => {
         </div>
 
         <div className="header-profile">
-          <FaUserCircle />
+          <FaUserCircle onClick={handleLogin} />
         </div>
       </header>
     </div>

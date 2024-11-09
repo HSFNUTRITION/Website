@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import './ProductView.css';
+import Header from './Header';
+import Footer from './Footer';
+import SubFooter from './SubFooter'
+import ProductCard from './ProductCard';
+import ProductCategory from './ProductCategory';
 
 const ProductView = () => {
   const [quantity, setQuantity] = useState(1);
@@ -12,7 +17,6 @@ const ProductView = () => {
     if (quantity > 1) setQuantity(prevQuantity => prevQuantity - 1);
   };
 
-  // Hardcoded Product Data
   const product = {
     title: 'Protein',
     images: [
@@ -41,9 +45,11 @@ const ProductView = () => {
   };
 
   return (
+    <div>
+    <Header />
+    <ProductCategory />
     <div className="product-view">
       <div className="product-view-container">
-        {/* Left Side - Product Images */}
         <div className="product-images">
           <div className="main-image">
             <img src={product.images[0]} alt="Main Product" />
@@ -55,40 +61,34 @@ const ProductView = () => {
           </div>
         </div>
 
-        {/* Right Side - Product Details */}
         <div className="product-details">
           <h1 className="product-title">{product.title}</h1>
           <p className="product-category">{product.category}</p>
           <p className="product-description">{product.description}</p>
 
-          {/* Pricing */}
           <div className="pricing">
             <span className="regular-price">₹{product.regularPrice}</span>
             <span className="sale-price">₹{product.salePrice}</span>
             <span className="discount">{product.discount}% OFF</span>
           </div>
 
-          {/* Quantity Control */}
           <div className="quantity-control">
             <button onClick={handleDecrease} className="quantity-btn">-</button>
             <span className="quantity">{quantity}</span>
             <button onClick={handleIncrease} className="quantity-btn">+</button>
           </div>
 
-          {/* Action Buttons */}
           <div className="action-buttons">
             <button className="btn add-to-cart">Add to Cart</button>
             <button className="btn buy-now">Buy Now</button>
           </div>
 
-          {/* Pickup Information */}
           <div className="pickup-info">
             <p><strong>Pickup available at:</strong> {product.pickupLocation}</p>
             <p><strong>Availability:</strong> {product.availability}</p>
             <button className="view-store-btn">View Store Information</button>
           </div>
 
-          {/* Product Features */}
           <div className="product-features">
             <h3>Product Features:</h3>
             <p>✅ Boost your athletic performance with ATX PREMIUM CREATINE MONOHYDRATE. Our lab-tested, high-quality creatine is designed to support increased strength, power, and endurance, making it an essential addition to any athlete’s supplement regimen.</p>
@@ -101,9 +101,13 @@ const ProductView = () => {
 
             <p>✅ 100 Servings: Each container provides 100 servings, giving you more value and consistent performance support.</p>
           </div>
-
         </div>
       </div>
+    </div>
+      <p className="also-like">You may also like</p>
+      <ProductCard />
+    <Footer />
+    <SubFooter />
     </div>
   );
 };

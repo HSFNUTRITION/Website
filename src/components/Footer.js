@@ -8,7 +8,6 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         
-        {/* Quick Links Section */}
         <div className="footer-section">
           <h4 className="footer-title">Quick Links</h4>
           <ul className="footer-links">
@@ -20,7 +19,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Company Info Section */}
         <div className="footer-section">
           <h4 className="footer-title">Hold Strong Fitness & Nutrition</h4>
           <p className="footer-text">hsfnutrition.in - India’s Trusted Supplement Shop</p>
@@ -43,7 +41,6 @@ const Footer = () => {
         
       </div>
 
-      {/* Footer Bottom */}
       <div className="footer-bottom">
         <p className="footer-bottom-text">© 2024 Hold Strong Fitness & Nutrition. All rights reserved.</p>
       </div>
