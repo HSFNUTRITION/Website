@@ -5,7 +5,7 @@ import './Header.css';
 const Header = () => {
   return (
     <div>
-      <marquee className="marquee">Hold Strong Fitness & Nutrition - hsfnutrition.in  </marquee>
+      
 
       {/* Main header */}
       <header className="header">
