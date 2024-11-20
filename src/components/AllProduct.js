@@ -301,7 +301,7 @@ const AllProduct = () => {
 
 	      <div className="all-product-grid">
 	        {filteredProducts.map((product) => {
-	          const { image, title, description, category, price, brand, inStock } = product;
+	          const { image, title, description, category, price, inStock } = product;
 
 	          return (
 	            <div className="all-product-card" key={product.id} onClick={() => handleClick(product.id)}>
