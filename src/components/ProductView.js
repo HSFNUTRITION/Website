@@ -5,9 +5,11 @@ import Footer from './Footer';
 import SubFooter from './SubFooter'
 import ProductCard from './ProductCard';
 import ProductCategory from './ProductCategory';
+import { useNavigate } from 'react-router-dom';
 
 const ProductView = () => {
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate();
 
   const handleIncrease = () => {
     setQuantity(prevQuantity => prevQuantity + 1);
@@ -16,6 +18,9 @@ const ProductView = () => {
   const handleDecrease = () => {
     if (quantity > 1) setQuantity(prevQuantity => prevQuantity - 1);
   };
+  const handleCart = () => {
+    navigate('/cart-view')
+  }
 
   const product = {
     title: 'Protein',
@@ -79,7 +84,7 @@ const ProductView = () => {
           </div>
 
           <div className="action-buttons">
-            <button className="btn add-to-cart">Add to Cart</button>
+            <button className="btn add-to-cart" onClick={handleCart}>Add to Cart</button>
             <button className="btn buy-now">Buy Now</button>
           </div>
 

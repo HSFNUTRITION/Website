@@ -4,7 +4,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: 95%;
 }
 
 /* Category title */
@@ -73,7 +73,7 @@
 @media (max-width: 768px) {
   .category-carousel {
     flex-direction: row;
-    gap: 10px;
+    gap: 15px;
     overflow-x: scroll;
   }
 
